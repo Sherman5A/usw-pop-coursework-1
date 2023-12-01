@@ -32,6 +32,11 @@ public class UserInterface {
             System.out.print("What's your age: ");
             try {
                 employeeAge = scanner.nextInt();
+                if (employeeAge < 0) {
+                    System.out.println("Negative ages not allowed");
+                    scanner.nextLine();
+                    continue;
+                }
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Letters not allowed in age");
@@ -43,6 +48,11 @@ public class UserInterface {
             System.out.print("Please enter your employee number: ");
             try {
                 employeeNumber = scanner.nextInt();
+                if (employeeNumber < 0) {
+                    System.out.println("Negative employee numbers not allowed");
+                    scanner.nextLine();
+                    continue;
+                }
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Letters not allowed in employee number");
@@ -51,10 +61,7 @@ public class UserInterface {
         }
 
         Employee newEmployee = new Employee(employeeName, employeeNumber, employeeAge);
-        System.out.printf("Hi %s. Your employee account %d has been created. Your unique pin number is %d.",
-                newEmployee.getName(),
-                newEmployee.getEmployeeNum(),
-                newEmployee.getPinNum()
-        );
+        System.out.printf("Hi %s. Your employee account %d has been created. Your unique pin number is %04d.",
+                newEmployee.getName(), newEmployee.getEmployeeNum(), newEmployee.getPinNum());
     }
 }

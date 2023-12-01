@@ -1,10 +1,6 @@
 package usw.employeelogin;
 
-import java.util.Arrays;
-
 public class Employee {
-
-
     private final String name;
     private final int employeeNum;
     private final int employeeAge;
@@ -48,10 +44,4 @@ public class Employee {
     public int getEmployeeNum() {
         return employeeNum;
     }
-
-
-    public int getEmployeeAge() {
-        return employeeAge;
-    }
-
 }
